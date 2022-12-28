@@ -1,0 +1,24 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Search{% endblock title %}
+
+{% block main-content %}
+<!-- 2nd Product Slider -->
+<div class="mx-3">
+  <h2>Search Result</h2>
+  <!-- Slider 2 -->
+  <div class="owl-carousel" id="slider1">
+    {% for lp in allproduct %}
+
+    <a href="{% url 'product-detail' lp.id %}" class="btn"><div class="item"><img src="{{lp.product_image.url}}" alt="" height="200" width="200"><span class="fw-bold">{{lp.title}}</span><br><small class="fw-light text-decoration-line-through">Rs. {{lp.selling_price}}</small> &nbsp;<span class="fs-5">Rs. {{lp.discounted_price}}</span></div></a>
+
+
+    {% endfor %}
+    </div>
+ </div>
+
+
+{% endblock main-content %}
+
+
+
